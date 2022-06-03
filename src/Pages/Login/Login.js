@@ -14,7 +14,7 @@ const Login = () => {
         const password = e.target.password.value;
         signInWithEmailAndPassword(email, password);
 
-        fetch('http://localhost:5000/login', {
+        fetch('https://cop-test.herokuapp.com//login', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
