@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const useFindUser = (id) => {
     const [user, setUser] = useState();
     useEffect(() => {
-        fetch(`https://cop-test.herokuapp.com/user/${id}`)
+        fetch(`http://localhost:5000/user/${id}`)
             .then(res => res.json())
             .then(data => setUser(data))
     }, [id])

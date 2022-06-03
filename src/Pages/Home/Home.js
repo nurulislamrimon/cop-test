@@ -10,9 +10,7 @@ const Home = () => {
     return (
         <div>
             {members.map(member =>
-                <h6 key={member._id}>{member.name}
-                    <Link to={`/user/${member._id}`}> edit</Link>
-                </h6>)}
+                <h6 key={member._id}>{member.name}</h6>)}
         </div>
     );
 };

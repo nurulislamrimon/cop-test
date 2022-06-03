@@ -7,13 +7,20 @@ const Finance = () => {
     const [users, setUsers] = useState([]);
     const [logedUser] = useAuthState(auth);
     const email = logedUser?.email;
+
     useEffect(() => {
-        const getFinance = async () => {
-            const { data } = await axios.get(`https://cop-test.herokuapp.com/finance?email=${email}`)
-            setUsers(data);
+        const getFinance = () => {
+            fetch(`http://localhost:5000/finance?email=${email}`, {
+                headers: {
+                    authorization: `${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => setUsers(data))
         }
         getFinance()
     }, [email])
+
     return (
         <div>
             {users.map(user => <h3 key={user._id}>{user.name}</h3>)}

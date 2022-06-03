@@ -14,7 +14,7 @@ const Login = () => {
         const password = e.target.password.value;
         signInWithEmailAndPassword(email, password);
 
-        fetch('https://cop-test.herokuapp.com/login', {
+        fetch('http://localhost:5000/login', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
@@ -22,7 +22,7 @@ const Login = () => {
             body: JSON.stringify({ email })
         })
             .then(res => res.json())
-            .then(data => localStorage.setItem('accessToken', JSON.stringify(data.accessToken)))
+            .then(data => localStorage.setItem('accessToken', data.accessToken))
 
         navigate('/home');
     }
