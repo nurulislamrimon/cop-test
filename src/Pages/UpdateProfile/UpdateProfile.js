@@ -8,7 +8,7 @@ const UpdateProfile = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        fetch(`https://cop-test.herokuapp.com//user/${id}`, {
+        fetch(`https://cop-test.herokuapp.com/user/${id}`, {
             method: "put",
             headers: {
                 'content-type': 'application/json'

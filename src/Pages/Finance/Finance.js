@@ -12,11 +12,11 @@ const Finance = () => {
 
     useEffect(() => {
         const getFinance = async () => {
-            const { data } = await axios.get(`https://cop-test.herokuapp.com//finance?email=${email}`, {
+            const { data } = await axios.get(`https://cop-test.herokuapp.com/finance?email=${email}`, {
                 headers: { authorization: `${localStorage.getItem('accessToken')}` }
             })
             setUsers(data)
-            // fetch(`https://cop-test.herokuapp.com//finance?email=${email}`, {
+            // fetch(`https://cop-test.herokuapp.com/finance?email=${email}`, {
             //     headers: {
             //         authorization: `${localStorage.getItem('accessToken')}`
             //     }
